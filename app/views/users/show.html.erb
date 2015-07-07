@@ -1,0 +1,9 @@
+
+  <%= @users.fname %>
+  <%= @users.lname %>
+  <%= @users.username %>
+  <%= @users.dob %>
+  <%= @users.city %>
+
+
+<%= link_to "Delete Account", user_path(@users.id), method: :delete %>
