@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create 
     @user = User.create params[:user]
-    flash[:alert] = "Just created #{@user.username}"
+    flash[:alert] = "Just created #{@user.fname}"
     redirect_to users_path
   end
 

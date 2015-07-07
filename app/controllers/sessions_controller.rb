@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
       if @user.password == password
           session[:user_id] = @user.id
           redirect_to root_path
-          flash[:alert] = "Welcome!"
+          flash[:alert] = "Welcome #{@user.username}!"
       else
         #wrong password case
         flash[:alert] = "Incorrect credentials"
