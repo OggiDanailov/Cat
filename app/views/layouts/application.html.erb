@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="clear"></div>
 <header>
   <% if current_user %>
     <%= link_to "Sign Out", '/logout', method: :delete %>
@@ -17,7 +18,7 @@
       <%= submit_tag "Log In" %>
     <% end %>
   <% end %>
-
+  <div class="clear"></div>
   <% if flash[:alert] %>
     <div style="background: yellow;">
       <%= flash[:alert]%>

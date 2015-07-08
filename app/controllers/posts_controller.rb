@@ -12,6 +12,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+  def destroy
+    @post = Post.find params[:user_id]
+    @post.destroy
+    # session[:user_id] = nil
+    redirect_to users_path
+  end
   
 
 
