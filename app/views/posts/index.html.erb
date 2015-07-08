@@ -5,4 +5,20 @@
   <p> Posted By :<br>
     <%= link_to post.user.fname, user_path(post.user_id) %>
   </p>
+  <%= form_for Comment.new do |f| %>
+  <%= f.text_area :comment %>
+  <%= f.hidden_field :post_id, value: post.id %>
+  <%= f.submit :submit %>
 <% end %>
+
+
+<% post.comments.each do |comment| %>
+  <p>
+    <%= comment.comment %>
+  </p>
+<% end %>
+
+
+
+<% end %>
+
