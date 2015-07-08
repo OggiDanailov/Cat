@@ -9,7 +9,11 @@
 <body>
   <div class="clear"></div>
 <header>
+    <nav>
+    <ul>
   <% if current_user %>
+     <li><%= link_to "Profile", user_path(current_user.id)%></li>
+     <li><%= link_to "Posts", root_path %></li>
     <%= link_to "Sign Out", '/logout', method: :delete %>
   <% else %>
     <%= form_tag '/sessions' do %>
@@ -18,12 +22,25 @@
       <%= submit_tag "Log In" %>
     <% end %>
   <% end %>
+      </ul>
+  </nav>
   <div class="clear"></div>
   <% if flash[:alert] %>
     <div style="background: yellow;">
       <%= flash[:alert]%>
     </div>
   <% end %>
+
+
+      <li><a href="/users/new">Sign Up</a></li>
+      <li><a href="/users">Sign In</a></li>
+      
+
+           
+     
+
+
+
 
 
 
