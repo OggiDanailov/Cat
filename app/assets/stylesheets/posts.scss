@@ -6,7 +6,7 @@
 body {
   background: #FFB175;
 }
-header {
+nav {
   background: rgba(0,0,0,.5);
   position: absolute;
   top: 0;
@@ -17,4 +17,8 @@ header {
 .clear {
   clear: both;
   height: 80px;
+}
+ul li{
+  display: inline;
+  padding: 20px;
 }
