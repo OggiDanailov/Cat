@@ -5,16 +5,30 @@
 
 
 #names {
-
-  margin: 0px 200px 0px 200px;
-  border: 1px black solid;
+  margin-right: auto;
+  /*border: 1px black solid;*/
+  text-align: right;
+  padding: 5px;
 }
 
 .new_post {
   margin-bottom: 20px;
 }
+
 input[type="submit"] {
     margin-top: 30px;
     width: 50px;
-  }
+}
+
+#body {
+  width: 30%;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
 
