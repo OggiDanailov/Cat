@@ -16,17 +16,21 @@
       <h1>The Creamsicle</h1>
       <h2>A Microblog for Popsicle Enthusiasts</h2>
     <ul>
-    <li><a href="/users/new">Sign Up</a></li>
   <% if current_user %>
-     <li><%= link_to "Profile", user_path(current_user.id)%></li>
+     <li><%= link_to "Home", user_path(current_user.id)%></li>
      <li><%= link_to "Edit Profile", edit_user_path(current_user.id)%></li>
      <li><%= link_to "Posts", root_path %></li>
     <%= link_to "Sign Out", '/logout', method: :delete %>
   <% else %>
-    <%= form_tag '/sessions' do %>
-      <%= text_field_tag :username, nil, placeholder: "username" %>
-      <%= password_field_tag :password, nil, placeholder: "password" %>
-      <%= submit_tag "Log In" %>
+  <li><a href="/users/new">Sign Up</a></li>
+  <li>
+    <!-- <div id="signin_form"> -->
+        <%= form_tag '/sessions', class: "form" do %>
+        <%= text_field_tag :username, nil, placeholder: "username" %>
+        <%= password_field_tag :password, nil, placeholder: "password" %>
+        <%= submit_tag "Log In" %>
+    <!-- </div> -->
+  </li>
     <% end %>
   <% end %>
       </ul>

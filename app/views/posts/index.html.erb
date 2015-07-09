@@ -1,6 +1,6 @@
 
    <% @posts.order(created_at: :desc).each do |post| %>
-   <div class="post_comment">
+  <div class="post_comment">
     <div class="post">
     <h3> <%= post.title %> </h3>
     <div id="border"></div>
@@ -12,21 +12,23 @@
     </p>
      </div>
     <div class="comment">
-    
-    <%= form_for Comment.new do |f| %>
-    <%= f.label :comment? %> </br>
-    <%= f.text_area :comment%>
-    <%= f.hidden_field :post_id, value: post.id %>
-  </br>
-    <%= f.submit :submit %>
-  <% end %>
-  <% post.comments.each do |comment| %>
-    <p>
-      <%= comment.comment %>
-    </p>
-  <% end %>
- </div>
- </div>
+      <% if current_user %>
+        <%= form_for Comment.new do |f| %>
+        <%= f.label :comment? %> </br>
+        <%= f.text_area :comment%>
+        <%= f.hidden_field :post_id, value: post.id %>
+          </br>
+        <%= f.submit :submit %>
+      <% end %>  
+      <% end %>
+      <% post.comments.each do |comment| %>
+        <p>
+         <%= comment.comment %>
+        </p>
+      <% end %>
+
+    </div>
+  </div>
 
 
 

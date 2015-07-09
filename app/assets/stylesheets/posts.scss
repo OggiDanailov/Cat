@@ -62,8 +62,7 @@ nav a:hover {
   height: 80px;
 }
 ul li{
-  display: inline;
-
+  display: inline-block;
 }
 
 textarea {
@@ -113,3 +112,44 @@ textarea {
   margin-right: -60px;
   display: block;
   }
+.form {
+  // margin-top: -28px;
+}
+input[type="password"] {
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+}
+input[type="text"] {
+  border: 2px solid #cccccc;
+  border-radius: 2px;
+}
+
+input[type="password"]:focus{
+  outline-color: #DE701B;
+}
+
+input[type="text"]:focus{
+  outline-color: #DE701B;
+}
+input[type="submit"]:active {
+  background-color: #EC8F48;
+  border-radius: 4px;
+}
+input[type="submit"]:focus {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
