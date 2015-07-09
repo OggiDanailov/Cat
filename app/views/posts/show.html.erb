@@ -12,7 +12,6 @@
     </p>
   </article>
 <% if current_user %>
-<p> hey </p>
   <%= form_for Comment.new do |f| %>
     <%= f.text_area :body %>
     <%= f.hidden_field :post_id, value: @post.id %>
