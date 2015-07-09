@@ -5,9 +5,9 @@
     <span><strong>Last name:</strong></span>
     <%= @user.lname %>
     <br>
-    <%= @user.username %>
+   <!--  <%= @user.username %>
     <%= @user.dob %>
-    <%= @user.city %>
+    <%= @user.city %> -->
   </div>
 </div>
 
@@ -30,8 +30,9 @@
    <p> <%= post.body %> </p>
   <% end %>
   </div>
-
-  <%= link_to "Delete Account", user_path(@user.id), method: :delete %>
+  
+  <%= link_to "Delete Account", user_path(@user.id), method: :delete, id:"delete" %>
+  
 
 </div>
 
