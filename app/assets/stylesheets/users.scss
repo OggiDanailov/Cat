@@ -4,11 +4,16 @@
 
 
 
-#names {
+#names {  
   margin-right: auto;
   /*border: 1px black solid;*/
   text-align: right;
   padding: 5px;
+  color: white;
+ /* border: thin solid black;*/
+  background-color: #ffc966;
+  border-radius: 10px;
+
 }
 
 .new_post {
@@ -25,4 +30,14 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-
+  #delete {
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+    background-color: #ff4c4c;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+  }
