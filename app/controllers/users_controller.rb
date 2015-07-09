@@ -6,8 +6,11 @@ class UsersController < ApplicationController
 
   def create 
     @user = User.create params[:user]
+    session[:user_id] = @user.id
     flash[:alert] = "Just created #{@user.username}"
-    redirect_to users_path
+    # @userid = User.find params[@user.id]
+    redirect_to user_path(@user)
+
   end
 
   def show

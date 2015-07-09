@@ -4,14 +4,14 @@
 
 
 body {
-  background: #FFB175;
+  background: #EC8F48;
 }
 nav {
   background: rgba(0,0,0,.5);
   position: absolute;
   top: 0;
   left: 0;
-  height: 90px;
+  height: 110px;
   width: 100%;
 }
 .clear {
@@ -21,4 +21,25 @@ nav {
 ul li{
   display: inline;
   padding: 20px;
+}
+#wrapper {
+  width: 900px;
+  margin: 0 auto;
+  background: #FFB175;
+  padding: 60px;
+  border-radius: 10px;
+}
+.post {
+  background: #FFEBD6;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  word-break: wrap;
+  padding: 10px;
+  margin-bottom: 30px;
+
+}
+.comment {
+  border: 1px solid black;
 }

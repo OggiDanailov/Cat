@@ -1,22 +1,28 @@
- 
- <% @posts.each do |post| %>
-  <h2> <%= post.title %> </h2>
-  <p> <%= post.body %> </p>
-  <p> Posted By :<br>
-    <%= link_to post.user.fname, user_path(post.user_id) %>
-  </p>
-  <%= form_for Comment.new do |f| %>
-  <%= f.text_area :comment %>
-  <%= f.hidden_field :post_id, value: post.id %>
-  <%= f.submit :submit %>
-<% end %>
+
+   <% @posts.order(created_at: :desc).each do |post| %>
+    <div class="post">
+    <h2> <%= post.title %> </h2>
+    <p> <%= post.body %> </p>
+    <p> Posted By :<br>
+      <%= link_to post.user.fname, user_path(post.user_id) %>
+    </p>
+    <div class="comment">
+    <% post.comments.each do |comment| %>
+    <p>
+      <%= comment.comment %>
+    </p>
+  <% end %>
+    <%= form_for Comment.new do |f| %>
+    <%= f.text_area :comment %>
+    <%= f.hidden_field :post_id, value: post.id %>
+  </br>
+    <%= f.submit :submit %>
+  <% end %>
+ </div>
+ </div>
 
 
-<% post.comments.each do |comment| %>
-  <p>
-    <%= comment.comment %>
-  </p>
-<% end %>
+
 
 
 
