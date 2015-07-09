@@ -1,19 +1,24 @@
 <div class="profile">
-  <h3>First name:</h3>
-  <%= @user.fname %>
-  <h3>Last name: </h3>
-  <%= @user.lname %>
-  <%= @user.username %>
-  <%= @user.dob %>
-  <%= @user.city %>
+  <div id="names">
+    <h3>First name:</h3>
+    <%= @user.fname %>
+    <h3>Last name: </h3>
+    <%= @user.lname %>
+    <%= @user.username %>
+    <%= @user.dob %>
+    <%= @user.city %>
+  </div>
 </div>
+
 <div class="new_post">
   <h1>Create new posts here</h1>
   <%= form_for @post do |p| %>
   <%= p.text_field :title %> 
   <%= p.text_field :body %>
   </br>
-  <%= p.submit :post %>
+  <div id="submit">   
+    <%= p.submit :post %>
+  </div>
   <% end %>
 </div>
   <% @user.posts.each do |post| %>

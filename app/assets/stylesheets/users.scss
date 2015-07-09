@@ -1,3 +1,20 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#names {
+
+  margin: 0px 200px 0px 200px;
+  border: 1px black solid;
+}
+
+.new_post {
+  margin-bottom: 20px;
+}
+input[type="submit"] {
+    margin-top: 30px;
+    width: 50px;
+  }
+

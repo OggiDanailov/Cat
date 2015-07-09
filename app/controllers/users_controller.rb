@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.create params[:user]
     session[:user_id] = @user.id
     flash[:alert] = "Just created #{@user.username}"
-    # @userid = User.find params[@user.id]
     redirect_to user_path(@user)
 
   end
