@@ -1,25 +1,33 @@
 
    <% @posts.order(created_at: :desc).each do |post| %>
+   <div class="post_comment">
     <div class="post">
-    <h2> <%= post.title %> </h2>
+    <h3> <%= post.title %> </h3>
+    <div id="border"></div>
     <p> <%= post.body %> </p>
-    <p> Posted By :<br>
+    <p id="by"> Posted by:
       <%= link_to post.user.fname, user_path(post.user_id) %>
+      <span>at</span>
+      <%= post.created_at.to_s(:long) %>
     </p>
+     </div>
     <div class="comment">
-    <% post.comments.each do |comment| %>
-    <p>
-      <%= comment.comment %>
-    </p>
-  <% end %>
+    
     <%= form_for Comment.new do |f| %>
-    <%= f.text_area :comment %>
+    <%= f.label :comment? %> </br>
+    <%= f.text_area :comment%>
     <%= f.hidden_field :post_id, value: post.id %>
   </br>
     <%= f.submit :submit %>
   <% end %>
+  <% post.comments.each do |comment| %>
+    <p>
+      <%= comment.comment %>
+    </p>
+  <% end %>
  </div>
  </div>
+
 
 
 

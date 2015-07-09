@@ -5,9 +5,30 @@
 
 body {
   background: #EC8F48;
+  font-family: 'Dosis', sans-serif;
+  // font-family: 'Amatic SC', cursive;
+}
+nav h1, h2{
+  font-family: 'Codystar', cursive;
+}
+h1 {
+  font-size: 40px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+#border {
+  border-top: 1px solid black;
+  width: 20%;
+  margin: 0 auto;
+
 }
 nav {
-  background: rgba(0,0,0,.5);
   position: absolute;
   top: 0;
   left: 0;
@@ -16,13 +37,24 @@ nav {
   color: white;
   text-align: center;
 }
-a {
+nav a {
   text-decoration: none;
   color: white;
   padding: 30px;
-
 }
-a:hover {
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  border-top: 1px white dotted;
+  border-bottom: 1px white dotted;
+  padding: 3px;
+}
+nav a:hover {
+  color: black;
+}
+.post a:hover {
   text-decoration: underline;
 }
 .clear {
@@ -32,9 +64,14 @@ a:hover {
 ul li{
   display: inline;
 
-  // text-align: center
+}
+
+textarea {
+  border: 3px solid #cccccc;
+  border-radius: 4px;
 
 }
+
 #wrapper {
   width: 900px;
   margin: 0 auto;
@@ -50,11 +87,21 @@ ul li{
   width: 50%;
   word-break: wrap;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 
 }
 .comment {
-  // border: 1px solid black;
+  background: #FFEBD6;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%;
+  word-break: wrap;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+#by {
+  font-size: 13px;
 }
 .new_post {
   text-align: center;

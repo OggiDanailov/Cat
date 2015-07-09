@@ -14,11 +14,9 @@
 <div class="new_post">
   <h1>Create new posts here</h1>
   <%= form_for @post do |p| %>
-      <%= p.text_field :title, placeholder:"title" %> 
+      <%= p.text_field :title, placeholder:"title", maxLength: 15  %> 
       <br>
-      <%= p.text_area :body, placeholder:"blah-blah-blah", id:"body",rows: 6, cols: 10%>
-      
-    
+      <%= p.text_area :body, placeholder:"blah-blah-blah", id:"body",rows: 6, cols: 10%>   
   </br>
   <div id="submit">   
     <%= p.submit :post %>
