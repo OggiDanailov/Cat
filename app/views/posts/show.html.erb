@@ -1,0 +1,26 @@
+<article class="post">
+    <h2>
+      <%= link_to post.title, post_path(post) %>
+    </h2>
+    <p class='post-body'>
+      <%= post.body %>
+    </p>
+    <p class='post-attribution'>
+      Posted by <%= post.user.username %>
+      at <%= post.created_at %>
+
+    </p>
+  </article>
+
+<%= form_for Comment.new do |f| %>
+  <%= f.text_area :body %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.submit :submit %>
+<% end %>
+
+<% @post.comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+  </p>
+<% end %>
+

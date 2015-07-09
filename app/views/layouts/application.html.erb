@@ -4,30 +4,43 @@
   <title>Railsblog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="clear"></div>
+
 <header>
+    <nav>
+      <h1>The Creamsicle</h1>
+      <h2>A Microblog for Popsicle Enthusiasts</h2>
+    <ul>
+    <li><a href="/users/new">Sign Up</a></li>
   <% if current_user %>
+     <li><%= link_to "Profile", user_path(current_user.id)%></li>
+     <li><%= link_to "Edit Profile", edit_user_path(current_user.id)%></li>
+     <li><%= link_to "Posts", root_path %></li>
     <%= link_to "Sign Out", '/logout', method: :delete %>
   <% else %>
     <%= form_tag '/sessions' do %>
       <%= text_field_tag :username, nil, placeholder: "username" %>
-      <%= password_field_tag :password, nil, placeholder: :Password %>
+      <%= password_field_tag :password, nil, placeholder: "password" %>
       <%= submit_tag "Log In" %>
     <% end %>
   <% end %>
-
+      </ul>
+  </nav>
+  <div class="clear"></div>
   <% if flash[:alert] %>
     <div style="background: yellow;">
       <%= flash[:alert]%>
     </div>
   <% end %>
-
-
-
 </header>
-<%= yield %>
+<div id="wrapper">
+  <%= yield %>
+</div>
 
 </body>
 </html>
