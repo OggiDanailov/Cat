@@ -5,7 +5,10 @@
       <h3> <%= post.title %> </h3>
       <div id="border"></div>
         <p> 
-          <%= post.body %> 
+          <%= truncate post.body, length: 150 %> 
+          <% if post.body.length > 150 %>
+            <%= link_to "Read More", user_path(post.user_id), id:"readmore" %>
+          <% end %>
         </p>
         <p id="by"> Posted by:
           <%= link_to post.user.fname, user_path(post.user_id) %>
@@ -27,9 +30,9 @@
         <p>
          <%= comment.comment %>
         </p>
-        <p class='post-attribution'>
+        <p id="by">
       Posted by <%= comment.user.username %>
-      at <%= comment.created_at %>
+      <span>at</span> <%= comment.created_at.to_s(:short) %>
 
     </p>
       <% end %>
