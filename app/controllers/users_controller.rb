@@ -5,16 +5,17 @@ class UsersController < ApplicationController
   end
 
   def create 
-    if 
-      params[:user][:password] == params[:password_confirmation]
-      @user = User.create params[:user]
-      session[:user_id] = @user.id
-      flash[:alert] = "Welcome #{@user.username}!"
-      redirect_to user_path(@user)
-  else
-      flash[:alert] = "Your passwords did not match"
-      redirect_to new_user_path
-    end
+  
+   if params[:user][:password] == params[:password_confirmation]
+     @user = User.create params[:user]
+     flash[:alert] = "Your profile has been created"
+     @user.save
+     session[:user_id] = @user.id
+     redirect_to posts_path
+   else
+     flash[:alert] = "Your password and confirmation did not match."
+     redirect_to user_path(:new)
+   end
 
 
   end

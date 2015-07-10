@@ -21,6 +21,12 @@
   <% @post.comments.each do |comment| %>
     <p>
       <%= comment.body %>
+       <p class='post-attribution'>
+      Posted by <%= comment.user.username %>
+      at <%= comment.created_at %>
+
+    </p>
+
     </p>
   <% end %>
 <% end %>
