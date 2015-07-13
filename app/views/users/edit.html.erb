@@ -12,10 +12,12 @@
     <%= f.text_field :city, {placeholder: 'City'} %>
 
     <%= f.text_field :dob, {placeholder: 'YYYY/MM/DD'} %>
-
-    <%= f.file_field :avatar %>
     
     <%= f.submit :create, id:"submit_button" %>
+    
+    <%= f.file_field :avatar %>
+    
+    
   <% end %>
 </div>
 
