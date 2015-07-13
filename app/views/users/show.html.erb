@@ -5,7 +5,7 @@
     <span><strong>Last name:</strong></span>
     <%= @user.lname %>
     <br>
-    <%= image_tag @user.avatar.url %>
+     <%= image_tag @user.avatar.url(:medium) %>
 
    <!--  <%= @user.username %>
     <%= @user.dob %>
@@ -14,6 +14,7 @@
 </div>
 
 <div class="new_post">
+  
   <h1>Create new posts here</h1>
   <%= form_for @post do |p| %>
       <%= p.text_field :title, placeholder:"title", maxLength: 15  %> 

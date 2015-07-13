@@ -5,15 +5,18 @@
 
 
 #names {  
-  margin-right: auto;
+  // margin-right: auto;
   /*border: 1px black solid;*/
-  text-align: right;
+  // text-align: right;
   padding: 5px;
-  color: white;
+  color: black;
  /* border: thin solid black;*/
   background-color: #ffc966;
   border-radius: 10px;
   text-align: center;
+  width: 400px; 
+  margin: 0 auto;
+  padding-bottom: 20px;
 
 }
 
@@ -44,6 +47,10 @@ input[type="submit"] {
 
 
 .profile {
-  float: right;
+  // float: right;
   // margin-left: 50px;
+
+  }
+  img {
+    border-radius: 10px;
   }
