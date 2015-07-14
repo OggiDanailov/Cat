@@ -5,17 +5,18 @@ class UsersController < ApplicationController
   end
 
   def create 
-    if 
-      params[:user][:password] == params[:password_confirmation]
-      @user = User.create params[:user]
-      session[:user_id] = @user.id
-      flash[:alert] = "Welcome #{@user.username}!"
-      redirect_to user_path(@user)
-  else
-      flash[:alert] = "Your passwords did not match"
-      redirect_to new_user_path
-    end
-
+  
+   if params[:user][:password] == params[:password_confirmation]
+     # @user = User.create params[:user]
+     @user = User.create( user_params )
+     flash[:alert] = "Your profile has been created"
+     @user.save
+     session[:user_id] = @user.id
+     redirect_to posts_path
+   else
+     flash[:alert] = "Your password and confirmation did not match."
+     redirect_to user_path(:new)
+   end
 
   end
 
@@ -43,8 +44,14 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
   
+  private
 
+    # Use strong_parameters for attribute whitelisting
+    # Be sure to update your create() and update() controller methods.
 
+    def user_params
+      params.require(:user).permit(:avatar, :username, :password, :fname, :lname, :dob, :city)
+    end
 
 
 end
